@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    font-size: 14px;
+    font-family: "open sans";
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Flexbox Classes */
+.flex{
+    display: flex;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.row-center{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.row-center-center{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-start{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.row-start-center{
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.row-end{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.row-end-center{
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.row-between{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.row-between-center{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row-around{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.row-around-center{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.row-even{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.row-even-center{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.column-center{
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.column-center-center{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-start{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.column-start-center{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.column-end{
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.column-end-center{
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+nav.sidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 15vw;
+    height: 100vh;
+    padding: 10px 5px;
+    padding-left: 30px;
+    border-right: 1px solid #ddd;
+}
+
+nav.sidenav .logo{
+    width: 80%;
+    margin-bottom: 10vh;
+}
+
+nav.sidenav .nav-links{
+    width: 100%;
+    height: auto;
+}
+
+nav.sidenav .nav-links .link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5vh;
+}
+
+nav.sidenav .nav-links .link img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav.sidenav .nav-links .link span{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+nav.sidenav .nav-links .link.active span{
+    color: darkblue;
+}
+
+nav.sidenav .nav-end{
+    position: absolute;
+    bottom: 5vh;
+}
+
+nav.sidenav .nav-end .link .icon{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+nav.sidenav .nav-end .link{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.truebody{
+    position: relative;
+    width: 85vw;
+    height: max-content;
+    float: right;
+    padding-bottom: 10vh;
+    background-color: #eee;
+}
+
+.truebody .topnav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    padding: 10px 30px;
+    margin-bottom: 3vh;
+    background-color: #fff;
+    border-bottom: 5px solid #eee;
+}
+
+.truebody .topnav form{
+    width: fit-content;
+}
+
+.truebody .topnav form input.top-search{
+    width: 450px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    background-color: #eee;
+    text-transform: capitalize;
+}
+
+.truebody .topnav .top-links{
+    width: fit-content;
+}
+
+.truebody .topnav .top-links .icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+
+.truebody .topnav .top-links .user{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    border-radius: 30px;
+}
+
+.truebody .topnav .top-links .user .user-img{
+    width: 50px;
+    margin-right: 15px;
+}
+
+.truebody .topnav .top-links .user .username{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 15px;
+    text-transform: capitalize;
+}
+
+.truebody .topnav .top-links .user .username .name{
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.truebody .topnav .top-links .user .username .title{
+    font-size: .7em;
+}
+
+
+
+
+
+.truebody .forms{
+    width: 100%;
+    height: auto;
+}
+
+.truebody .forms .controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    border-radius: 20px;
+    margin-bottom: 3vh;
+}
+
+.truebody .forms .controls .tab{
+    width: fit-content;
+    padding: 10px 75px;
+    border-radius: 20px;
+    background-color: transparent;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.truebody .forms .controls .tab.active{
+    background-color: #fff;
+    color: darkblue;
+}
+
+.truebody .forms .form-pay{
+    width: 100%;
+}
+
+.form-heading{
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: darkblue;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-emphasis{
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sub-emphasis{
+    font-size: .8em;
+}
+
+.truebody .forms .form-pay form{
+    width: 45%;
+    padding: 2%;
+    margin-top: 2vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.pad{
+    width: 100%;
+    height: auto;
+    padding: 7px 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 1px rgb(0, 0, 0, .2);
+    margin: 10px 0;
+    border-radius: 7px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border: none;
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-transform: capitalize;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.truebody .forms .form-pay .first-form .pad{
+    margin-bottom: 25px;
+}
+
+.block span{
+    font-size: .75em;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.block input{
+    width: 100%;
+    padding: 7px 20px;
+    border-radius: 7px;
+    border: 1px solid #ddd;
+}
+
+.truebody .forms .form-pay .first-form .group .block{
+    margin: 0px 10px;
+}
+
+.truebody .forms .form-pay .first-form .group .block:first-child, .truebody .forms .form-pay .first-form .group .block:last-child{
+    margin: 0;    
+}
+
+.truebody .forms .form-pay .first-form input[type=submit]{
+    width: 100%;
+    margin: 4vh 0;
+    padding: 7px 0px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: darkblue;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+}
+
+
+
+
+.truebody .forms .form-personal .second-form{
+    background-color: #fff;
+    width: 75%;
+    padding: 3% 5%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.truebody .forms .form-personal .second-form .block{
+    width: 230px;
+    margin: 20px 10px;
+}
+
+.truebody .forms .form-personal .second-form .upload{
+    width: fit-content;
+    margin-top: 3vh;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #eee;
+}
+
+.truebody .forms .form-personal .second-form .upload img{
+    width: 35px;
+}
+
+.truebody .forms .form-personal .second-form .upload .form-emphasis{
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.truebody .forms .form-personal .second-form .upload .sub-emphasis{
+    margin-bottom: 10px;
+}
+
+.truebody .forms .form-personal .second-form .upload button{
+    width: fit-content;
+    background-color: darkblue;
+    color: #fff;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.truebody .forms .form-personal .second-form .submit{
+    width: 100%;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.truebody .forms .form-personal .second-form .submit input{
+    background-color: darkblue;
+    color: #fff;
+    padding: 5px 20px;
+    border: navajowhite;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+
+
+
+
+.truebody .forms .form-academic .third-form{
+    background-color: #fff;
+    width: 75%;
+    padding: 3% 5%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.truebody .forms .form-academic .third-form .part-title{
+    width: 100%;
+    margin: 20px 0;
+    text-decoration: underline 3px solid darkblue;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.truebody .forms .form-academic .third-form .block{
+    width: 200px;
+    margin: 20px;
+}
+
+.truebody .forms .form-academic .third-form .group .block{
+    width: 300px;
+}
+
+.truebody .forms .form-academic .third-form .submit{
+    width: 100%;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.truebody .forms .form-academic .third-form .submit input{
+    background-color: darkblue;
+    color: #fff;
+    padding: 5px 20px;
+    border: navajowhite;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.truebody .forms .form-academic .third-form .button{
+    cursor: pointer;
+    background-color: darkblue;
+    color: #fff;
+    padding: 5px 20px;
+    border: navajowhite;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.truebody .forms .form-academic .third-form .part-two .group{
+    width: fit-content;
+    margin: 20px 15px;
+}
+
+.truebody .forms .form-academic .third-form .part-two .group .block{
+    width: 150px;
+    margin: 5px;
+}
