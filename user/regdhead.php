@@ -5,9 +5,9 @@ include_once('incl/config.php');
 
 if (isset($_POST['submit'])) {
 
-    if (!empty($_POST['fname'])) {
-        $oname = trim($_POST['fname']);
-    }
+
+    $oname = trim($_POST['fname']);
+
     $username = trim($_POST['username']);
 
     $password = trim($_POST['password']);
@@ -22,208 +22,207 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($dbc, $query);
     $row = mysqli_fetch_array($result);
     $numrows = mysqli_num_rows($result);
-}
-
-if ($numrows <= 0) {
-
-    $querye = "INSERT INTO users VALUES (0,'$oname', '$username', '$password', 'Department Head')";
-    $result = mysqli_query($dbc, $querye);
-
-    $querye = "UPDATE department SET DepartmentHead = '$oname' WHERE Departmentname='$dept'";
-    $result = mysqli_query($dbc, $querye);
-
-    echo 'Departmental Head registration Successful </br></br></br></br></br>';
 
 
-    //echo '<b><h1>'.$generatedtag.'</h1></b></br></br>';
+    if ($numrows <= 0) {
+
+        $querye = "INSERT INTO users VALUES (0,'$oname', '$username', '$password', 'Department Head')";
+        $result = mysqli_query($dbc, $querye);
+
+        $querye = "UPDATE department SET DepartmentHead = '$oname' WHERE Departmentname='$dept'";
+        $result = mysqli_query($dbc, $querye);
+
+        echo 'Departmental Head registration Successful </br></br></br></br></br>';
 
 
-    //echo 'Thanks <a href="registeradmin.php">Register another User</a></br>';
+        //echo '<b><h1>'.$generatedtag.'</h1></b></br></br>';
 
-    echo '<a href="../applicant/admin.php">Return to Admin page</a></br>';
 
-    //header("location: admin.php");
+        //echo 'Thanks <a href="registeradmin.php">Register another User</a></br>';
 
+        echo '<a href="../applicant/admin.php">Return to Admin page</a></br>';
+
+        //header("location: admin.php");
+
+    } else {
+        echo 'Existing User <a href="admin.php">Continue to Admin Panel</a>';
+        //header("location: index.php");
+
+    }
 } else {
-    echo 'Existing Item  <a href="admin.php">Continue to Admin Panel</a>';
-    //header("location: index.php");
-}
 
 
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <title>ABB - Admin - Add New Departmental Head</title>
+        <title>ABB - Admin - Add New Departmental Head</title>
 
-    <link href="admin/demo/webpage/chain/css/style.default.css" rel="stylesheet">
-    <link href="admin/demo/webpage/chain/css/morris.css" rel="stylesheet">
-    <link href="admin/demo/webpage/chain/css/select2.css" rel="stylesheet" />
-    <link href="admin/demo/webpage/chain/css/morris.css" rel="stylesheet">
-    <link href="admin/demo/webpage/chain/css/tunjicss.css" rel="stylesheet">
-</head>
+        <link href="admin/demo/webpage/chain/css/style.default.css" rel="stylesheet">
+        <link href="admin/demo/webpage/chain/css/morris.css" rel="stylesheet">
+        <link href="admin/demo/webpage/chain/css/select2.css" rel="stylesheet" />
+        <link href="admin/demo/webpage/chain/css/morris.css" rel="stylesheet">
+        <link href="admin/demo/webpage/chain/css/tunjicss.css" rel="stylesheet">
+    </head>
 
-<body>
+    <body>
 
-    <header>
-        <div class="headerwrapper">
-            <a href="index-2.html" class="logo">
-            </a>
+        <header>
+            <div class="headerwrapper">
+                <a href="index-2.html" class="logo">
+                </a>
 
-        </div><!-- headerwrapper -->
-    </header>
+            </div><!-- headerwrapper -->
+        </header>
 
-    <section>
-        <div class="mainwrapper">
-            <div class="leftpanel">
-                <div class="media profile-left">
-                    <a class="pull-left profile-thumb" href="profile.html">
-                        <img class="img-circle" src="admin/images/noimage.jpg" alt="">
-                    </a>
-                    <div class="media-body"></div>
-                </div><!-- media -->
-
-                <h5 class="leftpanel-title">Navigation</h5>
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="../applicant/admin.php"><i class="fa fa-user"></i> <span>Membership</span></a>
-                    <li class=""><a href="setting.html"><i class="fa fa-wrench"></i> <span>Settings</span></a>
-                    <li class=""><a href="../phishing/"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
-
-                </ul>
-
-            </div><!-- leftpanel -->
-
-            <div class="mainpanel">
-                <div class="pageheader">
-                    <div class="media">
-                        <div class="pageicon pull-left">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="media-body">
-                            <ul class="breadcrumb">
-                            </ul>
-                            <h4>New Department Head</h4>
-                        </div>
+        <section>
+            <div class="mainwrapper">
+                <div class="leftpanel">
+                    <div class="media profile-left">
+                        <a class="pull-left profile-thumb" href="profile.html">
+                            <img class="img-circle" src="admin/images/noimage.jpg" alt="">
+                        </a>
+                        <div class="media-body"></div>
                     </div><!-- media -->
-                </div><!-- pageheader -->
 
+                    <h5 class="leftpanel-title">Navigation</h5>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="../applicant/admin.php"><i class="fa fa-user"></i> <span>Dashboard</span></a>
+                    </ul>
 
-                <div class="contentpanel">
-                    <div class="panel panel-babcock">
-                        <div class="panel-heading">Departmental Head Registration
+                </div><!-- leftpanel -->
 
-
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <form class="form-horizontal" action="registeradmin.php" method="post">
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label" required>Full Name</label>
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" id="name" placeholder="Fullname" name="fname">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label" required>Username</label>
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
-                                            </div>
-                                        </div>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-2 control-label" required>Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" id="username" placeholder="password" name="password">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label" required>Department</label>
-                                    <div class="col-md-6">
-                                        <select id="Role" name="dept" class="form-control">
-                                            <option>--Select--</option>
-                                            <option>Production Line</option>
-                                            <option>Sales And Marketing</option>
-                                            <option>Accounting And Finance</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="row">
-                                    <div class="col-md-3"></div>
-                                    <div class="form-group col-md-6">
-                                        <button class="btn-sm btn btn-success" name="submit"><i class="fa fa-check"></i> Register</button>
-                                    </div>
-                                </div>
-
-                                </form>
+                <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-user"></i>
                             </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                </ul>
+                                <h4>New Department Head</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+
+
+                    <div class="contentpanel">
+                        <div class="panel panel-babcock">
+                            <div class="panel-heading">Departmental Head Registration
+
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="form-horizontal" action="registeradmin.php" method="post">
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label" required>Full Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="name" placeholder="Fullname" name="fname">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label" required>Username</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                                                </div>
+                                            </div>
+
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label" required>Password</label>
+                                        <div class="col-md-6">
+                                            <input type="password" class="form-control" id="username" placeholder="password" name="password">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label" required>Department</label>
+                                        <div class="col-md-6">
+                                            <select id="Role" name="dept" class="form-control">
+                                                <option>--Select--</option>
+                                                <option>Production Line</option>
+                                                <option>Sales And Marketing</option>
+                                                <option>Accounting And Finance</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
 
 
 
 
-                        </div><!-- row -->
+
+                                    <div class="row">
+                                        <div class="col-md-3"></div>
+                                        <div class="form-group col-md-6">
+                                            <button class="btn-sm btn btn-success" name="submit"><i class="fa fa-check"></i> Register</button>
+                                        </div>
+                                    </div>
+
+                                    </form>
+                                </div>
+
+
+
+
+                            </div><!-- row -->
+                        </div>
+
                     </div>
 
-                </div>
+
+                </div><!-- contentpanel -->
 
 
-            </div><!-- contentpanel -->
+            </div><!-- mainpanel -->
+            </div><!-- mainwrapper -->
+        </section>
 
 
-        </div><!-- mainpanel -->
-        </div><!-- mainwrapper -->
-    </section>
+        <script src="admin/demo/webpage/chain/js/jquery-1.11.1.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/bootstrap.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/modernizr.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/pace.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/retina.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/jquery.cookies.js"></script>
 
+        <script src="admin/demo/webpage/chain/js/flot/jquery.flot.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/flot/jquery.flot.resize.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/flot/jquery.flot.symbol.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/flot/jquery.flot.crosshair.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/flot/jquery.flot.categories.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/flot/jquery.flot.pie.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/morris.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/raphael-2.1.0.min.js"></script>
+        <script src="admin/demo/webpage/chain/js/jquery.sparkline.min.js"></script>
 
-    <script src="admin/demo/webpage/chain/js/jquery-1.11.1.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/bootstrap.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/modernizr.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/pace.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/retina.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/jquery.cookies.js"></script>
+        <script src="admin/demo/webpage/chain/js/custom.js"></script>
+        <script src="admin/demo/webpage/chain/js/charts.js"></script>
 
-    <script src="admin/demo/webpage/chain/js/flot/jquery.flot.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/flot/jquery.flot.resize.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/flot/jquery.flot.symbol.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/flot/jquery.flot.crosshair.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/flot/jquery.flot.categories.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/flot/jquery.flot.pie.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/morris.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/raphael-2.1.0.min.js"></script>
-    <script src="admin/demo/webpage/chain/js/jquery.sparkline.min.js"></script>
+    </body>
 
-    <script src="admin/demo/webpage/chain/js/custom.js"></script>
-    <script src="admin/demo/webpage/chain/js/charts.js"></script>
-
-</body>
-
-</html>
+    </html>
 
 <?php
 
-
+}
 ?>

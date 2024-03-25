@@ -84,9 +84,7 @@ if (isset($_POST['submit'])) {
 
                     <h5 class="leftpanel-title">Navigation</h5>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="superadmin.html"><i class="fa fa-user"></i> <span>Membership</span></a>
-                        <li class=""><a href="../register/login.php"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
-
+                        <li class="active"><a href="../applicant/admin.php"><i class="fa fa-user"></i> <span>Admin Dashboard</span></a>
                     </ul>
 
                 </div><!-- leftpanel -->

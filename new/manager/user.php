@@ -32,8 +32,6 @@ $role = $_SESSION['role'];
 
     <header>
         <div class="headerwrapper">
-            <span class="span-header">Budget Management System</span>
-
         </div><!-- headerwrapper -->
         <a class="logo">
             <img src="admin/demo/webpage/chain/images/babcock.png" alt="" />
@@ -56,15 +54,9 @@ $role = $_SESSION['role'];
                 <h5 class="leftpanel-title">Navigation</h5>
                 <ul class="nav nav-pills nav-stacked">
 
-
-
                     <li class=""><a href="check2.php"><i class="fa fa-wrench"></i> <span>Generate the Budget Report</span></a>
 
-
-
-
-                    <li class=""><a href="../index.html"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
-
+                    <li class=""><a href="register/login.php"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
 
                 </ul>
 
@@ -91,7 +83,6 @@ $role = $_SESSION['role'];
                     <div class="panel panel-babcock">
                         <div class="panel-heading">REGISTERED COST DRIVERS
                             <div class="pull-right">
-                                <a title="Create User" href="createuser.php"><span class="fa fa-plus-circle fa-2x" style="color: #fff;"></span></a>
                             </div>
 
                         </div>
@@ -120,32 +111,15 @@ $role = $_SESSION['role'];
 
                                     $numrows = mysqli_num_rows($result);
 
-
-
-
-
-
                                     $num = 1;
                                     do {
                                     ?>
-
-
-
-
-
                                         <tr>
                                             <td><?php echo $row['Drivername'];  ?></td>
 
                                             <td><?php echo $row['Department'];  ?></td>
 
-
-
-
                                             <?php
-
-
-
-
 
                                             ?>
                                         </tr>

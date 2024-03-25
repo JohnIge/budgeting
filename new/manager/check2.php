@@ -5,7 +5,6 @@ include_once('incl/config.php');
 
 if (isset($_POST['submit'])) {
 
-    //$bname = trim($_POST['bname']);
     $tag = trim($_POST['tag']);
 
     /*step to generate the budget
@@ -85,11 +84,7 @@ if (isset($_POST['submit'])) {
 
                 $units =  $row3['Units'];
 
-
-
                 $query4 = "SELECT * FROM costpool WHERE Poolname='$costpool'";
-
-                //$query4 = "SELECT * FROM costpooltrans WHERE Departmentname='$department' AND Driver='$costdriver' AND Poolname='$costpool'";
 
                 $result4 = mysqli_query($dbc, $query4);
                 $row4 = mysqli_fetch_array($result4);
@@ -105,8 +100,7 @@ if (isset($_POST['submit'])) {
 
             ?>
 
-                <h4>Costpool:<i><?php echo $costpool;   ?></i>Unit cost:<i><?php echo  $unitcost;   ?></i>Number Of Units:<i><?php echo  $units;   ?></i>Total Pool cost:<i><?php echo  $totalpoolcost;   ?></i></h4>
-
+                <h4>Costpool:<i><?php echo $costpool;  ?></br></i>Unit cost:<i><?php echo  $unitcost;   ?></br></i>Number Of Units:<i><?php echo  $units;   ?></br></i>Total Pool cost:<i><?php echo  $totalpoolcost;   ?></i></h4>
 
             <?php
 
@@ -124,10 +118,6 @@ if (isset($_POST['submit'])) {
             ?>
 
             <h3>Total Driver Cost:<i><?php echo $totaldriverbudget;   ?></i></h3>
-
-
-
-
 
 
 
@@ -165,7 +155,8 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-    <!DOCTYPE html>ABB - Report Page</title>
+    <!DOCTYPE html>
+    <title>ABB - Report Page</title>
 
     <link href="admin/demo/webpage/chain/css/style.default.css" rel="stylesheet">
     <link href="admin/demo/webpage/chain/css/morris.css" rel="stylesheet">
@@ -179,7 +170,6 @@ if (isset($_POST['submit'])) {
         <header>
             <div class="headerwrapper">
                 <a href="index-2.html" class="logo">
-                    <img src="admin/demo/webpage/chain/images/babcock.png" alt="" />
                 </a>
 
             </div><!-- headerwrapper -->
@@ -200,11 +190,7 @@ if (isset($_POST['submit'])) {
 
                     <h5 class="leftpanel-title">Navigation</h5>
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="superadmin.html"><i class="fa fa-user"></i> <span>Membership</span></a>
-
-                        <li class=""><a href="setting.html"><i class="fa fa-wrench"></i> <span>Settings</span></a>
-                        <li class=""><a href="../phishing/"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
-
+                        <li class="active"><a href="../manager/user.php"><i class="fa fa-user"></i><span>Back to Manager Dashboard</span></a>
                     </ul>
 
                 </div><!-- leftpanel -->
@@ -218,7 +204,7 @@ if (isset($_POST['submit'])) {
                             <div class="media-body">
                                 <ul class="breadcrumb">
                                 </ul>
-                                <h4>Budgeting System</h4>
+                                <h4>Genarate Budget Report</h4>
                             </div>
                         </div><!-- media -->
                     </div><!-- pageheader -->
@@ -226,7 +212,7 @@ if (isset($_POST['submit'])) {
 
                     <div class="contentpanel">
                         <div class="panel panel-babcock">
-                            <div class="panel-heading">Budgeting System
+                            <div class="panel-heading">Generate Report
 
 
                             </div>

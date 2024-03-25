@@ -58,7 +58,9 @@ if (isset($_POST['submit'])) {
 	<body>
 		<div class="form-holder">
 			<section class="form">
-				<div class="form-heading">Login</div>
+				<div class="form-heading">
+					<h3>Login</h3>
+				</div>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="first-form">
 					<div class="">
 						<span>Username</span>

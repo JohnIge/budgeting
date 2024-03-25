@@ -1,12 +1,11 @@
 <?php
 session_start();
-//include_once('numbers/validate05.inc');
+
 include_once('incl/config.php');
+
 $name = $_SESSION['name'];
 $role = $_SESSION['role'];
-//$_SESSION['role'] = $role;
-
-$query = "SELECT * FROM department WHERE DepartmentHead = '$name'";
+$query = "SELECT * FROM department WHERE Department_head = '$name'";
 
 $result = mysqli_query($dbc, $query);
 $row = mysqli_fetch_array($result);
@@ -60,7 +59,7 @@ $_SESSION['dept'] = $dept;
                 <h5 class="leftpanel-title">Navigation</h5>
                 <ul class="nav nav-pills nav-stacked">
                     <li class=""><a href="check2.php"><i class="fa fa-wrench"></i> <span>Assign Cost</span></a>
-                    <li class=""><a href="../index.html"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
+                    <li class=""><a href="../register/login.php"><i class="fa fa-wrench"></i><span>Logout</span></a></li>
                 </ul>
 
             </div><!-- leftpanel -->
@@ -84,7 +83,6 @@ $_SESSION['dept'] = $dept;
                     <div class="panel panel-babcock">
                         <div class="panel-heading">COST POOLS AND THEIR PRICES<?php echo $dept;  ?>
                             <div class="pull-right">
-                                <a title="Create User" href="createuser.php"><span class="fa fa-plus-circle fa-2x" style="color: #fff;"></span></a>
                             </div>
 
                         </div>
@@ -119,8 +117,6 @@ $_SESSION['dept'] = $dept;
                                         </tr>
 
                                         <?php
-
-
 
                                         ?>
 

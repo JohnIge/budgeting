@@ -40,7 +40,7 @@ include_once('incl/config.php');
                     <span>Add New Manager</span>
                 </a>
 
-                <a href="#" class="link">
+                <a href="../user/deletedhead.php" class="link">
                     <img src="assets/images/form-vector.png" alt="">
                     <span> Delete Departmental Head</span>
                 </a>
@@ -57,7 +57,7 @@ include_once('incl/config.php');
             </div>
 
             <div class="nav-end">
-                <a href="index.html" class="link">
+                <a href="../register/login.php" class="link">
                     <i class="fas fa-sign-out icon"></i>
                     <span>logout</span>
                 </a>
@@ -90,13 +90,13 @@ include_once('incl/config.php');
                             <thead>
                                 <tr>
                                     <th>Fullname</th>
-                                    <th>Department</th>
+                                    <th>Username</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <?php
-                                $query = "SELECT * FROM users";
+                                $query = "SELECT * FROM users WHERE Role='Department Head'";
 
                                 $result = mysqli_query($dbc, $query);
                                 $row = mysqli_fetch_array($result);
@@ -122,20 +122,6 @@ include_once('incl/config.php');
 
 
                         </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </section>
